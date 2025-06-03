@@ -79,7 +79,7 @@ const Testimonials: React.FC = () => {
       name: "Abhishek",
       rating: 4,
       platform: 'google' as const,
-      review: "Really enjoyed my stay here. The views are amazing from the property, and Josanto takes great care of everything once you're staying there. Highly recommended",
+      review: "Really enjoyed my stay here. The views are amazing from the property, and Josanto takes great care of everything once you're staying there. ",
       showMore: false
     },
     {
@@ -100,9 +100,8 @@ const Testimonials: React.FC = () => {
       name: "Sanjay",
       rating: 5,
       platform: 'airbnb' as const,
-      review: "Ambience, view everything was amazing. Clean rooms, great place for family and kids. Extremely proactive host and they were ready to accommodate all the requests!",
-      showMore: true
-    }
+      review: "Ambience, view everything was amazing. Clean rooms, great place for family and kids. Extremely proactive host and fulfilled all our requests.",
+      showMore: false    }
   ];
 
   return (

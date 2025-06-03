@@ -58,12 +58,10 @@ const Accommodations: React.FC = () => {
       price: "₹7800/Night",
       image: "/b1.jpeg",
       features: [
-        "4 spacious bedrooms",
-        "Large living area",
-        "Fully equipped kitchen",
-        "Mountain view terrace",
-        "Private garden",
-        "BBQ facilities"
+        "3 spacious bedrooms",
+        "Private outdoor seating area",
+        "Large living area with mountain views",
+        "Access to lawn and plantation walks"
       ]
     },
     {
@@ -73,14 +71,22 @@ const Accommodations: React.FC = () => {
       price: "₹4200/Night",
       image: "/s1.jpeg",
       features: [
-        "2 comfortable bedrooms",
         "Cozy living space",
         "Kitchenette with essentials",
-        "Private porch with plantation views",
-        "Access to viewpoint trails"
+        "Private balcony with plantation views",
+        "Queen-size Bunker bed"
       ]
     }
   ];
+
+  // Handler to scroll to the booking form section
+  const handleEnquireClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const bookingSection = document.getElementById('book-now');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="accommodations" className="py-20 bg-green-100/50">
@@ -105,6 +111,21 @@ const Accommodations: React.FC = () => {
               image={accommodation.image}
             />
           ))}
+        </div>
+
+        {/* Section for groups of 9+ guests */}
+        <div className="mt-12 p-6 bg-green-700 rounded-lg text-white text-center max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold mb-2">BOTH for Groups of 9+ Guests</h3>
+          <p className="mb-4">
+            Planning a larger gathering? We offer custom rates for bigger groups. Contact us directly for a personalized quote tailored to your needs.
+          </p>
+          <a
+            href="#book-now"
+            onClick={handleEnquireClick}
+            className="inline-block bg-green-100 text-green-800 font-bold py-3 px-8 rounded-lg hover:bg-white transition-all duration-300"
+          >
+            Enquire now
+          </a>
         </div>
       </div>
     </section>

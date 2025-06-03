@@ -14,6 +14,23 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Handler for "Book Now" click to scroll to booking form
+  const handleBookNowClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    setIsOpen(false);
+    const bookingSection = document.getElementById('book-now');
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const navItems = [
+    { label: 'Home', href: '#home' },
+    { label: 'Accommodations', href: '#accommodations' },
+    { label: 'Experiences', href: '#experiences' },
+    { label: 'Book Now', href: '#book-now', isButton: true }
+  ];
+
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
@@ -27,7 +44,7 @@ const Navbar: React.FC = () => {
             className="flex items-center gap-2"
           >
             <img 
-              src="/public/resized_logo.jpeg"
+              src="/public/logoo.png"
               alt="John's Green Rocks Farmstay Logo"
               className="h-12 w-auto"
             />
@@ -35,17 +52,29 @@ const Navbar: React.FC = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {['Home', 'Accommodations', 'Experiences', 'Book Now'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className={`${
-                  isScrolled ? 'text-green-800 hover:text-green-600' : 'text-white hover:text-green-100'
-                } transition-colors duration-300 font-medium`}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.isButton ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={handleBookNowClick}
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-md"
+                  style={{ marginLeft: 8 }}
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className={`${
+                    isScrolled ? 'text-green-800 hover:text-green-600' : 'text-white hover:text-green-100'
+                  } transition-colors duration-300 font-medium`}
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
 
           {/* Mobile Navigation Toggle */}
@@ -67,16 +96,27 @@ const Navbar: React.FC = () => {
       {isOpen && (
         <div className="md:hidden bg-white shadow-lg absolute w-full">
           <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            {['Home', 'Accommodations', 'Experiences','Book Now'].map((item) => (
-              <a 
-                key={item} 
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="text-green-800 hover:text-green-600 font-medium py-2"
-                onClick={() => setIsOpen(false)}
-              >
-                {item}
-              </a>
-            ))}
+            {navItems.map((item) =>
+              item.isButton ? (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={handleBookNowClick}
+                  className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-md"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  className="text-green-800 hover:text-green-600 font-medium py-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </div>
         </div>
       )}
