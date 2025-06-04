@@ -7,7 +7,7 @@ const Hero: React.FC = () => {
       id="home"
       className="relative h-screen w-full bg-cover bg-center flex items-center justify-center" 
       style={{ 
-        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/public/hero.jpg')",
+        backgroundImage: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/hero.jpg')",
         backgroundAttachment: 'fixed'
       }}
     >

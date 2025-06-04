@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
             className="flex items-center gap-2"
           >
             <img 
-              src="/public/logoo.png"
+              src="/logoo.png"
               alt="John's Green Rocks Farmstay Logo"
               className="h-12 w-auto"
             />
