@@ -52,29 +52,31 @@ const Accommodation: React.FC<AccommodationProps> = ({
 const Accommodations: React.FC = () => {
   const accommodations = [
     {
-      title: "Big House",
+      title: "Big Rock cottage",
       description: "A spacious private stay with stunning mountain views, perfect for families or groups of friends looking to enjoy nature together.",
       capacity: "Max 8 guests",
-      price: "₹7800/Night",
+      price: "₹7800/night",
       image: "/b1.jpeg",
       features: [
         "3 spacious bedrooms",
         "Private outdoor seating area",
+        
+        "Access to lawn and plantation walks",
         "Large living area with mountain views",
-        "Access to lawn and plantation walks"
       ]
     },
     {
-      title: "Small House",
+      title: "Small Rock cottage",
       description: "A cozy retreat perfect for couples or small families seeking a peaceful nature stay with all the comforts of home.",
       capacity: "Max 4 guests",
-      price: "₹4200/Night",
+      price: "₹4200/night",
       image: "/s1.jpeg",
       features: [
-        "Cozy living space",
+        "Single room living space",
+        "Queen-size Bunker bed",
         "Kitchenette with essentials",
-        "Private balcony with plantation views",
-        "Queen-size Bunker bed"
+        "Private balcony with plantation views"
+        
       ]
     }
   ];
@@ -115,7 +117,7 @@ const Accommodations: React.FC = () => {
 
         {/* Section for groups of 9+ guests */}
         <div className="mt-12 p-6 bg-green-700 rounded-lg text-white text-center max-w-2xl mx-auto">
-          <h3 className="text-2xl font-bold mb-2">BOTH for Groups of 9+ Guests</h3>
+          <h3 className="text-2xl font-bold mb-2">BOTH for Group of 9+ Guests</h3>
           <p className="mb-4">
             Planning a larger gathering? We offer custom rates for bigger groups. Contact us directly for a personalized quote tailored to your needs.
           </p>

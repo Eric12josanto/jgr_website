@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
         backgroundAttachment: 'fixed'
       }}
     >
-      <div className="container mx-auto px-4 text-center">
+      <div className="container mx-auto px-4 text-center mt-[-40px]">
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
           John's Green Rocks Farmstay
         </h1>
