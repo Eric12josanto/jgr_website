@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mountain as Mountains, UtensilsCrossed, Wifi, Users } from 'lucide-react';
+import { Mountain, UtensilsCrossed, Wifi, Users } from 'lucide-react';
 
 interface FeatureProps {
   icon: React.ReactNode;
@@ -9,8 +9,8 @@ interface FeatureProps {
 
 const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
   return (
-    <div className="glass-effect card-hover p-6 rounded-xl text-center">
-      <div className="mb-4 text-green-400">
+    <div className="glass-effect card-hover-effect p-6 rounded-xl text-center">
+      <div className="mb-4 text-green-400 float-animation">
         {icon}
       </div>
       <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
@@ -22,7 +22,7 @@ const Feature: React.FC<FeatureProps> = ({ icon, title, description }) => {
 const About: React.FC = () => {
   const features = [
     {
-      icon: <Mountains className="h-10 w-10" />,
+      icon: <Mountain className="h-10 w-10" />,
       title: "Mountain Adventures",
       description: "Explore scenic treks, jeep rides, and breathtaking viewpoints in the Munnar mountains."
     },
@@ -46,7 +46,7 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-20 gradient-bg">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 fade-in">
+        <div className="text-center mb-16 scroll-fade-up">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About This Space</h2>
           <p className="max-w-3xl mx-auto text-gray-300">
             Check out John's Green Rocks, a Munnar farmstay in a mountain cardamom plantation. 
@@ -55,19 +55,16 @@ const About: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16 stagger-children">
           {features.map((feature, index) => (
-            <div key={index} className="fade-in" style={{ animationDelay: `${index * 0.2}s` }}>
-              <Feature 
-                icon={feature.icon} 
-                title={feature.title} 
-                description={feature.description} 
-              />
-            </div>
+            <Feature 
+              key={index}
+              icon={feature.icon} 
+              title={feature.title} 
+              description={feature.description} 
+            />
           ))}
         </div>
-
-       
       </div>
     </section>
   );

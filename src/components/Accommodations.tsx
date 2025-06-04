@@ -60,7 +60,6 @@ const Accommodations: React.FC = () => {
       features: [
         "3 spacious bedrooms",
         "Private outdoor seating area",
-        
         "Access to lawn and plantation walks",
         "Large living area with mountain views",
       ]
@@ -76,7 +75,6 @@ const Accommodations: React.FC = () => {
         "Queen-size Bunker bed",
         "Kitchenette with essentials",
         "Private balcony with plantation views"
-        
       ]
     }
   ];

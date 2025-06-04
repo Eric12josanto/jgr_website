@@ -10,32 +10,32 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    // Update the document title
     document.title = "John's Green Rocks Farmstay - Munnar";
     
     // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const href = this.getAttribute('href');
-        if (!href) return;
-        
-        const targetElement = document.querySelector(href);
-        if (!targetElement) return;
-        
-        window.scrollTo({
-          top: targetElement.getBoundingClientRect().top + window.scrollY - 80, // Offset for fixed header
-          behavior: 'smooth'
-        });
+    const handleClick = (e: Event) => {
+      e.preventDefault();
+      const target = e.currentTarget as HTMLAnchorElement;
+      const href = target.getAttribute('href');
+      
+      if (!href) return;
+      
+      const targetElement = document.querySelector(href);
+      if (!targetElement) return;
+      
+      window.scrollTo({
+        top: targetElement.getBoundingClientRect().top + window.scrollY - 80,
+        behavior: 'smooth'
       });
+    };
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', handleClick);
     });
     
     return () => {
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.removeEventListener('click', function (e) {
-          // Cleanup
-        });
+        anchor.removeEventListener('click', handleClick);
       });
     };
   }, []);
@@ -47,7 +47,6 @@ function App() {
       <About />
       <Accommodations />
       <Experiences />
-    
       <Testimonials />
       <BookingForm />
       <Footer />
