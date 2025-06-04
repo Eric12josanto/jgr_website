@@ -1,6 +1,5 @@
 import React from 'react';
 import { Star } from 'lucide-react';
-import '../styles/testimonials.css';
 
 interface TestimonialProps {
   name: string;
@@ -20,7 +19,7 @@ const Testimonial: React.FC<TestimonialProps> = ({
   const [isExpanded, setIsExpanded] = React.useState(false);
   
   return (
-    <div className="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl min-w-[400px] max-w-[400px] mx-3 flex flex-col card-hover-effect">
+    <div className="bg-white rounded-lg shadow-lg p-6 transition-all duration-300 hover:shadow-xl mx-3 mb-6 flex flex-col">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="font-bold text-gray-800">{name}</h3>
@@ -57,33 +56,6 @@ const Testimonial: React.FC<TestimonialProps> = ({
             {isExpanded ? 'Show less' : 'Show more'}
           </button>
         )}
-      </div>
-    </div>
-  );
-};
-
-const ScrollingRow: React.FC<{ items: any[], direction: 'left' | 'right' }> = ({ items, direction }) => {
-  return (
-    <div className="relative overflow-hidden py-4 my-2">
-      <div className="absolute left-0 top-0 w-32 h-full bg-gradient-to-r from-green-100 to-transparent z-10" />
-      <div className="absolute right-0 top-0 w-32 h-full bg-gradient-to-l from-green-100 to-transparent z-10" />
-      <div 
-        className={`flex animate-scroll whitespace-nowrap`}
-        style={{
-          animationDirection: direction === 'left' ? 'normal' : 'reverse',
-        }}
-      >
-        {/* Double the items to create seamless loop */}
-        {[...items, ...items].map((testimonial, index) => (
-          <Testimonial 
-            key={index}
-            name={testimonial.name}
-            rating={testimonial.rating}
-            platform={testimonial.platform}
-            review={testimonial.review}
-            showMore={testimonial.showMore}
-          />
-        ))}
       </div>
     </div>
   );
@@ -135,25 +107,27 @@ const Testimonials: React.FC = () => {
     }
   ];
 
-  // Split testimonials into three groups
-  const firstRow = testimonialsList.slice(0, 2);
-  const secondRow = testimonialsList.slice(2, 4);
-  const thirdRow = testimonialsList.slice(4);
-
   return (
-    <section className="py-12 bg-green-100 overflow-hidden">
+    <section className="py-12 bg-green-100">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-8 scroll-fade-up">
+        <div className="text-center mb-8">
           <h2 className="text-2xl md:text-3xl font-bold text-green-800 mb-3">Guest Reviews</h2>
           <p className="max-w-3xl mx-auto text-gray-600">
             See what our guests have to say about their experience at John's Green Rocks Farmstay.
           </p>
         </div>
 
-        <div className="space-y-4 scroll-rotate-in">
-          <ScrollingRow items={firstRow} direction="left" />
-          <ScrollingRow items={secondRow} direction="right" />
-          <ScrollingRow items={thirdRow} direction="left" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonialsList.map((testimonial, index) => (
+            <Testimonial 
+              key={index}
+              name={testimonial.name}
+              rating={testimonial.rating}
+              platform={testimonial.platform}
+              review={testimonial.review}
+              showMore={testimonial.showMore}
+            />
+          ))}
         </div>
       </div>
     </section>
