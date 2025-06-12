@@ -1,5 +1,7 @@
 import React from 'react';
 import { Star } from 'lucide-react';
+import GoogleLogo from '../assets/google-logo.svg';
+import AirbnbLogo from '../assets/airbnb-logo.svg';
 
 interface TestimonialProps {
   name: string;
@@ -25,9 +27,10 @@ const Testimonial: React.FC<TestimonialProps> = ({
           <h3 className="font-bold text-gray-800">{name}</h3>
           <div className="flex items-center mt-1">
             <img 
-              src={platform === 'google' ? 'https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg' : 'https://upload.wikimedia.org/wikipedia/commons/6/69/Airbnb_Logo_B%C3%A9lo.svg'} 
+              src={platform === 'google' ? GoogleLogo : AirbnbLogo} 
               alt={`${platform} logo`}
               className="h-4 w-4 mr-2"
+              loading="lazy"
             />
             <span className="text-sm text-gray-600">{platform === 'google' ? 'Google' : 'Airbnb'}</span>
           </div>
