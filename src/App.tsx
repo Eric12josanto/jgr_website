@@ -10,7 +10,7 @@ import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
-    document.title = "John's Green Rocks Farmstay - Munnar";
+    document.title = "John's Green Rocks Farmstay - Private Stay in Munnar, Kerala";
     
     // Smooth scroll for anchor links
     const handleClick = (e: Event) => {
@@ -42,13 +42,19 @@ function App() {
 
   return (
     <div className="font-sans">
-      <Navbar />
-      <Hero />
-      <About />
-      <Accommodations />
-      <Experiences />
-      <Testimonials />
-      <BookingForm />
+      <header>
+        <Navbar />
+      </header>
+      
+      <main>
+        <Hero />
+        <About />
+        <Experiences />
+        <Accommodations />
+        <Testimonials />
+        <BookingForm />
+      </main>
+      
       <Footer />
     </div>
   );

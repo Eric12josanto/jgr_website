@@ -13,7 +13,7 @@ const Hero: React.FC = () => {
   }, []);
 
   return (
-    <div 
+    <section 
       id="home"
       className={`relative h-screen w-full bg-cover bg-center flex items-center justify-center transition-opacity duration-1000 ${
         imageLoaded ? 'opacity-100' : 'opacity-0'
@@ -29,14 +29,17 @@ const Hero: React.FC = () => {
         }`}
       >
         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-          John's Green Rocks Farmstay
+          John's Green Rocks Farmstay Munnar
+          <span className="block text-xl md:text-2xl lg:text-3xl mt-2">Your Private Mountain Retreat</span>
         </h1>
-        <p className="text-xl md:text-2xl text-white mb-6 max-w-2xl mx-auto">
-         Escape the city chaos at -The Best Farmstay in Munnar 
+        <p className="text-xl md:text-2xl text-white mb-12 max-w-2xl mx-auto">
+          Experience Luxury Farmstay in Kerala's Most Scenic Location
         </p>
-        <p className="text-white mb-8 max-w-3xl mx-auto">
-         Stay on top of a remote mountain in a cottage at the heart of a 4-acre cardamom plantation. Trek through trails, explore the full area, and feel the calm of carefree childhood days—Just like your uncle's farm house with yummy Kerala foods and campfires, perfect for chilling or private get-togethers
+        
+        <p className="text-white max-w-3xl mx-auto mb-8">
+          Stay on top of a remote mountain in a cottage at the heart of a 4-acre cardamom plantation. Trek through trails, explore the full area, and feel the calm of carefree childhood days—Just like your uncle's farm house with yummy Kerala foods and campfires, perfect for chilling or private get-togethers
         </p>
+
         <a 
           href="#book-now" 
           className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 transform hover:scale-105"
@@ -46,7 +49,7 @@ const Hero: React.FC = () => {
       </div>
       
       <div className="absolute bottom-0 w-full h-16 bg-gradient-to-t from-black/30 to-transparent"></div>
-    </div>
+    </section>
   );
 };
 

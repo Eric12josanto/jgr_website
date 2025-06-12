@@ -26,8 +26,10 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { label: 'Home', href: '#home' },
+    { label: 'About', href: '#about' },
     { label: 'Accommodations', href: '#accommodations' },
     { label: 'Experiences', href: '#experiences' },
+    { label: 'Testimonials', href: '#testimonials' },
     { label: 'Book Now', href: '#book-now', isButton: true }
   ];
 

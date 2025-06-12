@@ -15,20 +15,19 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               {/* Airbnb Icon */}
               <a
-                href="https://www.airbnb.co.in/rooms/36663727?source_impression_id=p3_1748893558_P3apv_Iva6pa6SH2"
+                href="https://www.airbnb.co.in/rooms/36663727"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-green-300 transition-colors"
                 aria-label="Airbnb"
               >
-                {/* Airbnb SVG */}
-                <svg className="h-5 w-5" viewBox="0 0 32 32" fill="currentColor">
-                  <path d="M16.002 6.7c-1.2 0-2.3.7-2.8 1.8l-7.1 14.2c-.5 1-.5 2.2 0 3.2.6 1.1 1.7 1.8 2.9 1.8h14c1.2 0 2.3-.7 2.9-1.8.5-1 .5-2.2 0-3.2l-7.1-14.2c-.5-1.1-1.6-1.8-2.8-1.8zm0 2c.4 0 .8.2 1 .6l7.1 14.2c.2.4.2.8 0 1.2-.2.4-.6.6-1 .6h-14c-.4 0-.8-.2-1-.6-.2-.4-.2-.8 0-1.2l7.1-14.2c.2-.4.6-.6 1-.6zm0 4.3c-1.7 0-3.1 1.4-3.1 3.1 0 1.2.7 2.3 1.8 2.8l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4l-1.7 3.4c-.2.4 0 .8.4 1 .4.2.8 0 1-.4l1.7-3.4c.2-.4 0-.8-.4-1-.4-.2-.8 0-1 .4z"/>
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-7h2v2h-2v-2zm0-6h2v4h-2V7z"/>
                 </svg>
               </a>
               {/* Instagram Icon */}
               <a
-                href="https://www.instagram.com/reel/ChO5gIOpOUn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+                href="https://www.instagram.com/reel/ChO5gIOpOUn/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white hover:text-green-300 transition-colors"

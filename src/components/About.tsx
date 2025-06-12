@@ -46,8 +46,10 @@ const About: React.FC = () => {
   return (
     <section id="about" className="py-20 gradient-bg">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16 scroll-fade-up">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">About This Space</h2>
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Experience Munnar's Best Farmstay
+          </h2>
           <p className="max-w-3xl mx-auto text-gray-300">
             Check out John's Green Rocks, a Munnar farmstay in a mountain cardamom plantation. 
             It's perfect for techies and corporate folks who need a break—think jeep rides, treks, 
